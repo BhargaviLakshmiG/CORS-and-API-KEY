@@ -1,9 +1,8 @@
 var request= new XMLHttpRequest();
-var url_string="https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?id=1264527"; //to get weather by cityid
-//var url_string="https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=London&APPID=cf8aa0b1474d506375c37d9e4a3eef90";//for weather by city name with API key included in URL string
-//var url_string="https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?d=1264527&APPID=cf8aa0b1474d506375c37d9e4a3eef90";
+//var url_string="https://api.openweathermap.org/data/2.5/forecast?q=London&APPID=cf8aa0b1474d506375c37d9e4a3eef90";//for weather by city name with API key included in URL string
+//var url_string="https://api.openweathermap.org/data/2.5/forecast?id=1264527&APPID=cf8aa0b1474d506375c37d9e4a3eef90"; //to get weather by cityid
+var url_string="https://api.openweathermap.org/data/2.5/weather?zip=94040&appid=cf8aa0b1474d506375c37d9e4a3eef90"; //to get weather by zipcode
 request.open("GET",url_string,true);
-request.setRequestHeader("X-API-Key","cf8aa0b1474d506375c37d9e4a3eef90");//adding API key in header
 request.send();
 request.onload=function () { 
 var data=JSON.parse(this.response);
